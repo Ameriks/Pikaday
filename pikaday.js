@@ -897,6 +897,10 @@
             }
 
             this.gotoDate(this._d);
+            
+            // Fixed issue with  RangeError: Maximum call stack size exceeded.
+            if (this._o.field && this._o.field.value == this.toString())
+               return;
 
             if (this._o.field) {
                 this._o.field.value = this.toString();
